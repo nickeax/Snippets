@@ -10,9 +10,12 @@ namespace Snippets.Controllers
             return View();
         }
 
-        public string Welcome(string name = "User", int numTimes = 0)
+        public IActionResult Welcome(string name = "User", int numTimes = 0)
         {
-            return HtmlEncoder.Default.Encode($"Hello {name}, NumTimes is: {numTimes}");
+            ViewData["Name"] = name;
+            ViewData["NumTimes"] = numTimes;
+            
+            return View();
         }
     }
 }
