@@ -5,9 +5,9 @@ namespace Snippets.Controllers
 {
     public class HelloWorldController : Controller
     {
-        public string Index()
+        public IActionResult Index()
         {
-            return "Hello World";
+            return View();
         }
 
         public string Welcome(string name = "User", int numTimes = 0)
